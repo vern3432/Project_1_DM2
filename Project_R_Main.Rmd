@@ -7,3 +7,9 @@ date: "2024-01-25"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r}
+Spot_data<-read.csv("dataset.csv")
+Spot_data
+```
+
