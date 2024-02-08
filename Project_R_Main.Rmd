@@ -6,10 +6,31 @@ date: "2024-01-25"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
 ```
 
 ```{r}
 Spot_data<-read.csv("dataset.csv")
 Spot_data
+```
+```{r}
+
+unique_genres <- unique(Spot_data$track_genre)
+
+result_df <- data.frame(track_genre = character(length(unique_genres)), frequency = integer(length(unique_genres)))
+
+for (i in 1:length(unique_genres)) {
+  genre <- unique_genres[i]
+  frequency <- sum(Spot_data$track_genre == genre)
+  result_df[i, ] <- c(genre, frequency)
+}
+
+colnames(result_df) <- c("track_genre", "frequency")
+
+print(result_df)
+
+```
+
+```{r}
 ```
 
