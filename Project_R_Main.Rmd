@@ -32,5 +32,12 @@ print(result_df)
 ```
 
 ```{r}
+Spot_data2<-Spot_data %>% filter(track_genre==c("hip-hop","country","classical"))
+for(x in 1:length(colnames(Spot_data2)){
+  
+  
+  
+}
+write.csv(Spot_data2,"FilteredSpotData.csv")
 ```
 
