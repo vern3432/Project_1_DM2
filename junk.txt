@@ -1,0 +1,112 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, Birch
+from sklearn.mixture import GaussianMixture
+from sklearn.metrics import silhouette_score
+
+data = pd.read_csv("dataset.csv")
+
+chosen_genres = ["hip-hop", "Rock", "classical"]
+filtered_data = data[data['track_genre'].isin(chosen_genres)]
+
+# Drop unnecessary columns
+filtered_data.drop(columns=["track_id", "artists", "album_name", "track_name", "track_genre"], inplace=True)
+
+# Preprocessing
+scaler = StandardScaler()
+scaled_data=filtered_data
+scaled_data2 = scaler.fit_transform(filtered_data)
+
+pca = PCA(n_components=2)
+pca_data = pca.fit_transform(scaled_data)
+
+best_cluster_results = []
+
+kmeans = KMeans(n_clusters=3, random_state=42)
+cluster_labels = kmeans.fit_predict(scaled_data)
+silhouette_avg = silhouette_score(scaled_data, cluster_labels)
+best_cluster_results.append(("KMeans", "n_clusters=3", silhouette_avg, kmeans))
+
+plt.figure(figsize=(8, 6))
+for i in range(kmeans.n_clusters):
+    plt.scatter(pca_data[cluster_labels == i, 0], pca_data[cluster_labels == i, 1], label=f'Cluster {i+1}')
+plt.title(f'KMeans Clustering Results (Silhouette Score: {silhouette_avg:.2f})')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.legend()
+plt.show()
+
+hier_clustering = AgglomerativeClustering(n_clusters=3, linkage='ward')
+cluster_labels = hier_clustering.fit_predict(scaled_data)
+silhouette_avg = silhouette_score(scaled_data, cluster_labels)
+best_cluster_results.append(("Hierarchical", "linkage=ward_n_clusters=3", silhouette_avg, hier_clustering))
+
+plt.figure(figsize=(8, 6))
+for i in range(hier_clustering.n_clusters):
+    plt.scatter(pca_data[cluster_labels == i, 0], pca_data[cluster_labels == i, 1], label=f'Cluster {i+1}')
+plt.title(f'Hierarchical Clustering Results (Silhouette Score: {silhouette_avg:.2f})')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.legend()
+plt.show()
+
+dbscan = DBSCAN()
+cluster_labels = dbscan.fit_predict(scaled_data2)
+silhouette_avg = silhouette_score(scaled_data2, cluster_labels)
+best_cluster_results.append(("DBScan", "default", silhouette_avg, dbscan))
+
+plt.figure(figsize=(8, 6))
+plt.scatter(pca_data[:, 0], pca_data[:, 1], c=cluster_labels, cmap='viridis')
+plt.title(f'DBScan Clustering Results (Silhouette Score: {silhouette_avg:.2f})')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.colorbar(label='Cluster Label')
+plt.show()
+
+birch = Birch(n_clusters=3)
+cluster_labels = birch.fit_predict(scaled_data)
+silhouette_avg = silhouette_score(scaled_data, cluster_labels)
+best_cluster_results.append(("Birch", "n_clusters=3", silhouette_avg, birch))
+
+plt.figure(figsize=(8, 6))
+for i in range(len(set(cluster_labels))):
+    plt.scatter(pca_data[cluster_labels == i, 0], pca_data[cluster_labels == i, 1], label=f'Cluster {i+1}')
+plt.title(f'Birch Clustering Results (Silhouette Score: {silhouette_avg:.2f})')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.legend()
+plt.show()
+
+
+covariance_type=['full', 'tied', 'diag', 'spherical']
+# for covariance_type1 in covariance_type: 
+gmm = GaussianMixture(n_components=3, covariance_type='full')
+gmm.fit(scaled_data)
+cluster_labels = gmm.predict(scaled_data)
+silhouette_avg = silhouette_score(scaled_data, cluster_labels)
+best_cluster_results.append(("GMM", "covariance_type=full_n_components=3", silhouette_avg, gmm))
+
+# plotting clusters using PCA for GMM
+plt.figure(figsize=(8, 6))
+for i in range(gmm.n_components):
+    plt.scatter(pca_data[cluster_labels == i, 0], pca_data[cluster_labels == i, 1], label=f'Cluster {i+1}')
+plt.title(f'Gaussian Mixture Models Clustering Results (Silhouette Score: {silhouette_avg:.2f})')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.legend()
+plt.show()
+
+best_cluster_result = max(best_cluster_results, key=lambda x: x[2])
+
+print(f"Best clustering method: {best_cluster_result[0]} with parameters {best_cluster_result[1]}")
+print(f"Silhouette score: {best_cluster_result[2]}")
+
+# store the best result in a dataframe
+columns = ['Method', 'Parameters', 'Silhouette Score', 'Model']
+best_result_df = pd.DataFrame([best_cluster_result], columns=columns)
+
+print("Best Clustering Result:")
+print(best_result_df)
+
