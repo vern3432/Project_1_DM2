@@ -1,0 +1,21 @@
+Unnamed: 0,track_id,artists,album_name,track_name,popularity,duration_ms,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,track_genre
+99889,379HUTMiphNA5RO5VVjEV4,Catie Turner,Relaxing Pop,God Must Hate Me,1,149802,False,0.459,0.304,2,-10.107,1,0.136,0.967,1.95e-05,0.0951,0.072,76.954,3,singer-songwriter
+100906,1DEvcP8uilOusAMyMLB6ew,Tipe-X,Super Surprise,Jangan Jadi Pecundang,32,207546,False,0.87,0.893,9,-4.177,1,0.04,0.175,0.000138,0.0302,0.967,135.17,4,ska
+100654,0TWTda4yD1jdsIlRTQLoA0,Los Cafres,Alas Canciones,Puedo,36,315293,False,0.705,0.681,1,-7.589,0,0.0499,0.0987,3.47e-05,0.059,0.963,169.864,4,ska
+100659,5lWxhOZyvgTrCxAbcnCAeB,The Bronx,The Bronx (II),History's Stranglers,34,165613,False,0.394,0.991,11,-3.351,0,0.0716,3.93e-05,0.00125,0.0563,0.834,97.93,4,ska
+100163,6XeuHuEhijEhvt2KXsJGvZ,Inspector,Inspección Retroacústica,Brindo Por Ti,42,248626,False,0.609,0.815,0,-4.26,1,0.0316,0.00658,1.32e-06,0.874,0.858,148.838,4,ska
+12585,6wWK3sM9AXuPRD9QTl4jdk,Leon Lai,我的真心獻給你,我的真心獻給你,20,232200,False,0.519,0.28,10,-14.822,1,0.0366,0.444,1.42e-05,0.0878,0.254,112.04,4,cantopop
+12870,3iALSfsgC7OUTel9f2Ohqh,Andy Hui,愛音樂三人行 - 許志安,二人行一日後,18,233413,False,0.422,0.603,9,-8.537,1,0.0315,0.117,0.0,0.206,0.46,181.986,4,cantopop
+100549,6mRzGkoKCJKicK9eEph2xm,Lasse Stefanz,Rallarsväng (DeLuxe),Kalla det drömmar om du vill,35,161520,False,0.633,0.947,11,-4.909,1,0.0823,0.211,0.00415,0.319,0.785,91.965,4,ska
+99927,0ZNYGrmcehorhh9JOeg5Iv,José González,Stay Alive (From The Secret Life Of Walter Mitty),Stay Alive,67,266906,False,0.714,0.306,6,-12.111,1,0.0388,0.726,0.168,0.0924,0.314,129.984,4,singer-songwriter
+99097,7816irfzlAgs6ACKmCWg5C,Bryan Adams,Kick It,Summer Of '69,0,217493,False,0.5,0.908,2,-4.303,1,0.0418,0.0166,0.0,0.128,0.744,138.834,4,singer-songwriter
+99809,1kcYfi1mkfhnJYntYSi9gb,Prateek Kuhad,Prateek Kuhad on Audiotree Live,Drown - Audiotree Live Version,34,194214,False,0.501,0.0713,4,-20.001,1,0.0554,0.95,0.00195,0.11,0.418,163.324,4,singer-songwriter
+12669,0LuBQym8RGIcybVJE5F5iE,AGA,Tomorrow,Tomorrow,47,250416,False,0.522,0.446,9,-8.113,1,0.0289,0.771,5.16e-06,0.121,0.283,124.308,4,cantopop
+12245,4jdbuSQAlNrYHPKHUPLGg2,Wilfred Lau,LOVE 06' 情歌集,二等天使,25,225986,False,0.566,0.5,2,-6.459,1,0.028,0.762,0.0,0.146,0.495,144.884,4,cantopop
+12510,3p4UTiSIIpP4LFn0KEyEOj,Eason Chan,Live For Today,十面埋伏,39,232119,False,0.559,0.474,0,-6.359,1,0.0287,0.231,0.0,0.105,0.399,138.031,4,cantopop
+12132,5GCfGYBzhQ2szULHf8wJYm,Faye Wong,Di Dar,曖昧,49,280666,False,0.294,0.467,0,-8.776,0,0.0328,0.312,0.0,0.431,0.322,207.724,4,cantopop
+100103,5gkNiqB4WzDX9pCHuCLgSa,La Perra Que Los Parió,Como Evitar Que Sangremos,Lo Que Nunca Te Dije,41,313520,False,0.277,0.626,0,-5.936,1,0.0306,0.0109,0.00412,0.102,0.19,173.574,4,ska
+12556,51nB3PkZCbCwo1mXt3qDBh,Jacky Cheung,過敏世界,離開以後,48,242120,False,0.646,0.39,2,-13.96,1,0.0436,0.532,0.0,0.114,0.327,133.14,4,cantopop
+99827,4C4Pduzp8LfAtQXHAGQWM5,Hozier,Hozier,Sedated,55,207669,False,0.66,0.61,9,-5.161,0,0.026,0.2,1.1e-05,0.105,0.29,85.999,4,singer-songwriter
+12188,2bJCDeXpJe1EQhxllXI7Pf,陳美玲,浪漫情懷,欲斷難斷,26,242613,False,0.788,0.578,0,-9.998,1,0.0303,0.334,3.09e-06,0.247,0.561,119.089,4,cantopop
+12604,4tFZI85Z61VYuBYTtCrWqQ,Karen Mok,做自己 TO BE,他不愛我,48,239120,False,0.595,0.352,7,-10.345,1,0.0293,0.201,3.08e-06,0.143,0.139,120.006,4,cantopop
